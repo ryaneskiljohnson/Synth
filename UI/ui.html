@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synth - JUCE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="synth-container">
+        <header class="synth-header">
+            <h1 class="synth-title">
+                <span class="icon">🎹</span>
+                <span class="title-text">SYNTH</span>
+            </h1>
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span class="status-text">Ready</span>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <a href="components.html" style="color: #00d4ff; text-decoration: none; font-size: 0.9em; padding: 8px 16px; background: rgba(0, 212, 255, 0.1); border-radius: 6px; border: 1px solid rgba(0, 212, 255, 0.3); transition: all 0.3s ease;">View Components</a>
+                <a href="demo.html" style="color: #00d4ff; text-decoration: none; font-size: 0.9em; padding: 8px 16px; background: rgba(0, 212, 255, 0.1); border-radius: 6px; border: 1px solid rgba(0, 212, 255, 0.3); transition: all 0.3s ease;">Try Interactive</a>
+            </div>
+        </header>
+
+        <main class="synth-main">
+            <!-- Oscillator Section -->
+            <section class="synth-section">
+                <h2 class="section-title">Oscillator</h2>
+                <div class="controls-grid">
+                    <div class="control-item">
+                        <label for="waveform">Waveform</label>
+                        <select id="waveform" class="select-control">
+                            <option value="sine">Sine</option>
+                            <option value="square">Square</option>
+                            <option value="sawtooth">Sawtooth</option>
+                            <option value="triangle">Triangle</option>
+                        </select>
+                    </div>
+                    <div class="control-item">
+                        <label for="frequency">Frequency</label>
+                        <div class="slider-container">
+                            <input type="range" id="frequency" class="slider" min="20" max="2000" value="440" step="1">
+                            <div class="value-display" id="frequencyValue">440 Hz</div>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label for="detune">Detune</label>
+                        <div class="slider-container">
+                            <input type="range" id="detune" class="slider" min="-50" max="50" value="0" step="1">
+                            <div class="value-display" id="detuneValue">0 cents</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Envelope Section -->
+            <section class="synth-section">
+                <h2 class="section-title">Envelope</h2>
+                <div class="controls-grid">
+                    <div class="control-item">
+                        <label for="attack">Attack</label>
+                        <div class="slider-container">
+                            <input type="range" id="attack" class="slider" min="0" max="2000" value="10" step="1">
+                            <div class="value-display" id="attackValue">10 ms</div>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label for="decay">Decay</label>
+                        <div class="slider-container">
+                            <input type="range" id="decay" class="slider" min="0" max="2000" value="100" step="1">
+                            <div class="value-display" id="decayValue">100 ms</div>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label for="sustain">Sustain</label>
+                        <div class="slider-container">
+                            <input type="range" id="sustain" class="slider" min="0" max="100" value="70" step="1">
+                            <div class="value-display" id="sustainValue">70%</div>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label for="release">Release</label>
+                        <div class="slider-container">
+                            <input type="range" id="release" class="slider" min="0" max="2000" value="500" step="1">
+                            <div class="value-display" id="releaseValue">500 ms</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filter Section -->
+            <section class="synth-section">
+                <h2 class="section-title">Filter</h2>
+                <div class="controls-grid">
+                    <div class="control-item">
+                        <label for="filterType">Type</label>
+                        <select id="filterType" class="select-control">
+                            <option value="lowpass">Low Pass</option>
+                            <option value="highpass">High Pass</option>
+                            <option value="bandpass">Band Pass</option>
+                            <option value="notch">Notch</option>
+                        </select>
+                    </div>
+                    <div class="control-item">
+                        <label for="cutoff">Cutoff</label>
+                        <div class="slider-container">
+                            <input type="range" id="cutoff" class="slider" min="20" max="20000" value="2000" step="10">
+                            <div class="value-display" id="cutoffValue">2000 Hz</div>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label for="resonance">Resonance</label>
+                        <div class="slider-container">
+                            <input type="range" id="resonance" class="slider" min="0" max="100" value="10" step="1">
+                            <div class="value-display" id="resonanceValue">10</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Master Controls -->
+            <section class="synth-section master-section">
+                <h2 class="section-title">Master</h2>
+                <div class="controls-grid">
+                    <div class="control-item wide">
+                        <label for="volume">Volume</label>
+                        <div class="slider-container">
+                            <input type="range" id="volume" class="slider" min="0" max="100" value="50" step="1">
+                            <div class="value-display" id="volumeValue">50%</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Play Controls -->
+            <div class="play-controls">
+                <button class="play-button" id="playButton" onclick="playNote()">
+                    <span class="play-icon">▶</span>
+                    <span class="play-text">Play Note</span>
+                </button>
+                <button class="stop-button" id="stopButton" onclick="stopNote()">
+                    <span class="stop-icon">■</span>
+                    <span class="stop-text">Stop</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

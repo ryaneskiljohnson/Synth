@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Components Demo - Blackway FX Kit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: url('Assets/background_01.png') center/cover no-repeat,
+                        linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background-attachment: fixed;
+            color: #fff;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+        }
+
+        .section {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+            align-items: start;
+        }
+
+        .component-item {
+            text-align: center;
+        }
+
+        .value-display {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: rgba(0, 212, 255, 0.2);
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="ui.html" class="back-link">← Back to Synth</a>
+        
+        <h1>🎛️ Interactive Components Demo</h1>
+        <p class="subtitle">Test all interactive UI components with toggle states and filmstrip animations</p>
+
+        <!-- Knobs Section -->
+        <div class="section">
+            <h2 class="section-title">Knobs (Filmstrip Animation)</h2>
+            <div class="component-grid" id="knobs-container">
+                <!-- Knobs will be created here -->
+            </div>
+        </div>
+
+        <!-- Sliders Section -->
+        <div class="section">
+            <h2 class="section-title">Sliders (Filmstrip Animation)</h2>
+            <div class="component-grid" id="sliders-container">
+                <!-- Sliders will be created here -->
+            </div>
+        </div>
+
+        <!-- Toggle Buttons Section -->
+        <div class="section">
+            <h2 class="section-title">Toggle Buttons</h2>
+            <div class="component-grid" id="toggle-buttons-container">
+                <!-- Toggle buttons will be created here -->
+            </div>
+        </div>
+
+        <!-- Switches Section -->
+        <div class="section">
+            <h2 class="section-title">Switches</h2>
+            <div class="component-grid" id="switches-container">
+                <!-- Switches will be created here -->
+            </div>
+        </div>
+
+        <!-- LEDs Section -->
+        <div class="section">
+            <h2 class="section-title">LEDs</h2>
+            <div class="component-grid" id="leds-container">
+                <!-- LEDs will be created here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="components.js"></script>
+    <script>
+        // Initialize component library
+        const ui = new UIComponents();
+
+        // Create knobs
+        const knobTypes = [
+            { filmstrip: 'knob_small_black_128_frames.png', label: 'Small Black', size: 60 },
+            { filmstrip: 'knob_medium_black_128_frames.png', label: 'Medium Black', size: 80 },
+            { filmstrip: 'knob_big_black_128_frames.png', label: 'Big Black', size: 100 },
+            { filmstrip: 'knob_big_white_128_frames.png', label: 'Big White', size: 100 },
+            { filmstrip: 'knob_small_solid_black_128_frames.png', label: 'Small Solid', size: 60 },
+            { filmstrip: 'knob_small_scale_linear_128_frames.png', label: 'Small Linear', size: 60 },
+            { filmstrip: 'knob_small_scale_bipolar_128_frames.png', label: 'Small Bipolar', size: 60 },
+        ];
+
+        knobTypes.forEach((type, index) => {
+            const knob = ui.createKnob('knobs-container', {
+                id: `knob_${index}`,
+                min: 0,
+                max: 100,
+                value: 50,
+                filmstrip: type.filmstrip,
+                size: type.size,
+                label: type.label,
+                onChange: (value) => {
+                    console.log(`${type.label} knob: ${value.toFixed(1)}`);
+                }
+            });
+        });
+
+        // Create sliders
+        const sliderTypes = [
+            { filmstrip: 'slider_horizontal_128_frames.png', label: 'Horizontal', orientation: 'horizontal', width: 200, height: 30 },
+            { filmstrip: 'slider_vertical_128_frames.png', label: 'Vertical', orientation: 'vertical', width: 200, height: 30 },
+        ];
+
+        sliderTypes.forEach((type, index) => {
+            const slider = ui.createSlider('sliders-container', {
+                id: `slider_${index}`,
+                min: 0,
+                max: 100,
+                value: 50,
+                filmstrip: type.filmstrip,
+                orientation: type.orientation,
+                width: type.width,
+                height: type.height,
+                label: type.label,
+                onChange: (value) => {
+                    console.log(`${type.label} slider: ${value.toFixed(1)}`);
+                }
+            });
+        });
+
+        // Create toggle buttons
+        const toggleTypes = [
+            { on: 'button_rectangular_big_on.png', off: 'button_rectangular_big_off.png', label: 'Big Rectangular' },
+            { on: 'button_rectangular_small_on.png', off: 'button_rectangular_small_off.png', label: 'Small Rectangular' },
+            { on: 'button_quare_big_on.png', off: 'button_quare_big_off.png', label: 'Big Square' },
+            { on: 'button_square_small_on.png', off: 'button_square_small_off.png', label: 'Small Square' },
+        ];
+
+        toggleTypes.forEach((type, index) => {
+            const toggle = ui.createToggleButton('toggle-buttons-container', {
+                id: `toggle_${index}`,
+                onImage: type.on,
+                offImage: type.off,
+                initialState: false,
+                label: type.label,
+                onChange: (state) => {
+                    console.log(`${type.label} toggle: ${state ? 'ON' : 'OFF'}`);
+                }
+            });
+        });
+
+        // Create switches
+        const switchTypes = [
+            { orientation: 'horizontal', label: 'Horizontal Switch' },
+            { orientation: 'vertical', label: 'Vertical Switch' },
+        ];
+
+        switchTypes.forEach((type, index) => {
+            const switch_ = ui.createSwitch('switches-container', {
+                id: `switch_${index}`,
+                orientation: type.orientation,
+                initialState: false,
+                label: type.label,
+                onChange: (state) => {
+                    console.log(`${type.label}: ${state ? 'ON' : 'OFF'}`);
+                }
+            });
+        });
+
+        // Create LEDs
+        for (let i = 0; i < 4; i++) {
+            const led = ui.createLED('leds-container', {
+                id: `led_${i}`,
+                initialState: i % 2 === 0,
+                label: `LED ${i + 1}`,
+                size: 30
+            });
+        }
+
+        // Demo: Toggle LEDs every 2 seconds
+        setInterval(() => {
+            for (let i = 0; i < 4; i++) {
+                const led = ui.components.get(`led_${i}`);
+                if (led) {
+                    led.setState(!led.getState());
+                }
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

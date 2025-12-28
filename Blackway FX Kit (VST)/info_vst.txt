@@ -1,0 +1,23 @@
+Fonts:
+Comfortaa Regular
+https://fonts.adobe.com/fonts/magistral
+https://www.paratype.com/fonts/pt/magistral
+
+Size:
+knob big black: 422x422
+knob big white: 422x422
+knob big scale bipolar: 402x345
+knob big scale linear: 402x345
+knob medium black: 172x172
+knob medium solid black: 172x172
+knob medium scale bipolar: 172x149
+knob medium scale linear: 172x149
+knob small black: 114x114
+knob small solid black: 114x114
+knob small scale bipolar: 122x107
+knob small scale linear: 122x107
+meter led: 46x418
+arrow vu: 264x150
+slider horizontal: 458x54
+slider vertical: 50x438
+wheel: 98x230

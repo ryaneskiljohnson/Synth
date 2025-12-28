@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<JUCERPROJECT id="Syn1" name="Synth" projectType="guiapp" useAppConfig="0" addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1" version="1.0.0" companyName="YourCompany" companyCopyright="Copyright (c) 2024" companyWebsite="https://yoursite.com" companyEmail="your@email.com" cppLanguageStandard="17">
+  <MAINGROUP id="Syn1" name="Synth">
+    <GROUP id="{D7F8A864-8ECA-4FE0-8FEC-20B87407D899}" name="Source">
+      <FILE id="Main.cpp" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp" />
+      <FILE id="MainComponent.h" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h" />
+      <FILE id="MainComponent.cpp" name="MainComponent.cpp" compile="1" resource="0" file="Source/MainComponent.cpp" />
+    </GROUP>
+    <GROUP id="{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}" name="UI">
+      <FILE id="ui.html" name="ui.html" compile="0" resource="1" file="UI/ui.html" />
+      <FILE id="styles.css" name="styles.css" compile="0" resource="1" file="UI/styles.css" />
+      <FILE id="app.js" name="app.js" compile="0" resource="1" file="UI/app.js" />
+      <FILE id="components_html" name="components.html" compile="0" resource="1" file="UI/components.html" />
+      <FILE id="demo_html" name="demo.html" compile="0" resource="1" file="UI/demo.html" />
+      <FILE id="components_js" name="components.js" compile="0" resource="1" file="UI/components.js" />
+    </GROUP>
+    <GROUP id="{bed9d9af-03a2-48da-8ac3-1dd8587aa4e9}" name="Assets">
+      <FILE id="background_01_png" name="background_01.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/background_01.png" />
+      <FILE id="background_02_png" name="background_02.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/background_02.png" />
+      <FILE id="background_03_png" name="background_03.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/background_03.png" />
+      <FILE id="button_quare_big_off_png" name="button_quare_big_off.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/button_quare_big_off.png" />
+      <FILE id="button_quare_big_on_png" name="button_quare_big_on.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/button_quare_big_on.png" />
+      <FILE id="button_rectangular_big_off_png" name="button_rectangular_big_off.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/button_rectangular_big_off.png" />
+      <FILE id="button_rectangular_big_on_png" name="button_rectangular_big_on.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/button_rectangular_big_on.png" />
+      <FILE id="button_rectangular_small_off_png" name="button_rectangular_small_off.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/button_rectangular_small_off.png" />
+      <FILE id="button_rectangular_small_on_png" name="button_rectangular_small_on.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/button_rectangular_small_on.png" />
+      <FILE id="button_square_small_off_png" name="button_square_small_off.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/button_square_small_off.png" />
+      <FILE id="button_square_small_on_png" name="button_square_small_on.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/button_square_small_on.png" />
+      <FILE id="led_off_png" name="led_off.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/led_off.png" />
+      <FILE id="led_on_png" name="led_on.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/led_on.png" />
+      <FILE id="switch_horizontal_off_png" name="switch_horizontal_off.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/switch_horizontal_off.png" />
+      <FILE id="switch_horizontal_on_png" name="switch_horizontal_on.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/switch_horizontal_on.png" />
+      <FILE id="switch_vertical_off_png" name="switch_vertical_off.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/switch_vertical_off.png" />
+      <FILE id="switch_vertical_on_png" name="switch_vertical_on.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/switch_vertical_on.png" />
+      <FILE id="pad_off_png" name="pad_off.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/pad_off.png" />
+      <FILE id="pad_on_png" name="pad_on.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/pad_on.png" />
+      <FILE id="screw_01_png" name="screw_01.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/screw_01.png" />
+      <FILE id="screw_02_png" name="screw_02.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/screw_02.png" />
+      <FILE id="screw_03_png" name="screw_03.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/screw_03.png" />
+      <FILE id="screw_04_png" name="screw_04.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/screw_04.png" />
+      <FILE id="screen_big_png" name="screen_big.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/screen_big.png" />
+      <FILE id="screen_small_png" name="screen_small.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/screen_small.png" />
+      <FILE id="meter_vu_png" name="meter_vu.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/meter_vu.png" />
+      <FILE id="arrow_vu_png" name="arrow_vu.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/arrow_vu.png" />
+      <FILE id="grid_01_png" name="grid_01.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/grid_01.png" />
+      <FILE id="grid_02_png" name="grid_02.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/grid_02.png" />
+      <FILE id="PNG_Filmstripes_128_frames_knob_small_solid_black_128_frames_png" name="knob_small_solid_black_128_frames.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/PNG Filmstripes 128 frames/knob_small_solid_black_128_frames.png" />
+      <FILE id="PNG_Filmstripes_128_frames_knob_big_white_128_frames_png" name="knob_big_white_128_frames.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/PNG Filmstripes 128 frames/knob_big_white_128_frames.png" />
+      <FILE id="PNG_Filmstripes_128_frames_knob_small_black_128_frames_png" name="knob_small_black_128_frames.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/PNG Filmstripes 128 frames/knob_small_black_128_frames.png" />
+      <FILE id="PNG_Filmstripes_128_frames_knob_medium_black_128_frames_png" name="knob_medium_black_128_frames.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/PNG Filmstripes 128 frames/knob_medium_black_128_frames.png" />
+      <FILE id="PNG_Filmstripes_128_frames_knob_big_black_128_frames_png" name="knob_big_black_128_frames.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/PNG Filmstripes 128 frames/knob_big_black_128_frames.png" />
+      <FILE id="PNG_Filmstripes_128_frames_slider_horizontal_128_frames_png" name="slider_horizontal_128_frames.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/PNG Filmstripes 128 frames/slider_horizontal_128_frames.png" />
+      <FILE id="PNG_Filmstripes_128_frames_slider_vertical_128_frames_png" name="slider_vertical_128_frames.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/PNG Filmstripes 128 frames/slider_vertical_128_frames.png" />
+      <FILE id="PNG_Filmstripes_128_frames_meter_vu_128_frames_png" name="meter_vu_128_frames.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/PNG Filmstripes 128 frames/meter_vu_128_frames.png" />
+      <FILE id="PNG_Filmstripes_128_frames_wheel_128_frames_png" name="wheel_128_frames.png" compile="0" resource="1" file="Blackway FX Kit (VST)/Assets/PNG Filmstripes 128 frames/wheel_128_frames.png" />
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="1" useGlobalPath="0" />
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="1" useGlobalPath="0" />
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="1" useGlobalPath="0" />
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="1" useGlobalPath="0" />
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="1" useGlobalPath="0" />
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="1" useGlobalPath="0" />
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="1" useGlobalPath="0" />
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="1" useGlobalPath="0" />
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="1" useGlobalPath="0" />
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="1" useGlobalPath="0" />
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="1" useGlobalPath="0" />
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="1" useGlobalPath="0" />
+  </MODULES>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0" />
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="Synth" osxSDK="default" osxCompatibility="10.15 osxLatest" osxArchitectures="arm64;x86_64" cppLanguageStandard="17" cppLibType="0" optimisation="0" targetFolder="Builds/MacOSX/build/Debug" headerPath="" preprocessorDefs="DEBUG=1 JUCE_DEBUG=1 JUCE_DISPLAY_SPLASH_SCREEN=1 JUCE_USE_DARK_SPLASH_SCREEN=0 JUCE_PROJUCER_VERSION=0x70005" xcodeResourceType="default" xcodeResourceFlags="0" xcodeResourcePhase="0" xcodeResourcePhaseFlags="0" xcodeResourcePhaseFileTypes="" />
+        <CONFIGURATION isDebug="0" name="Release" targetName="Synth" osxSDK="default" osxCompatibility="10.15 osxLatest" osxArchitectures="arm64;x86_64" cppLanguageStandard="17" cppLibType="0" optimisation="3" targetFolder="Builds/MacOSX/build/Release" headerPath="" preprocessorDefs="NDEBUG=1 JUCE_DISPLAY_SPLASH_SCREEN=1 JUCE_USE_DARK_SPLASH_SCREEN=0 JUCE_PROJUCER_VERSION=0x70005" xcodeResourceType="default" xcodeResourceFlags="0" xcodeResourcePhase="0" xcodeResourcePhaseFlags="0" xcodeResourcePhaseFileTypes="" />
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="JUCE/modules" />
+        <MODULEPATH id="juce_audio_devices" path="JUCE/modules" />
+        <MODULEPATH id="juce_audio_formats" path="JUCE/modules" />
+        <MODULEPATH id="juce_audio_processors" path="JUCE/modules" />
+        <MODULEPATH id="juce_audio_utils" path="JUCE/modules" />
+        <MODULEPATH id="juce_core" path="JUCE/modules" />
+        <MODULEPATH id="juce_data_structures" path="JUCE/modules" />
+        <MODULEPATH id="juce_dsp" path="JUCE/modules" />
+        <MODULEPATH id="juce_events" path="JUCE/modules" />
+        <MODULEPATH id="juce_graphics" path="JUCE/modules" />
+        <MODULEPATH id="juce_gui_basics" path="JUCE/modules" />
+        <MODULEPATH id="juce_gui_extra" path="JUCE/modules" />
+      </MODULEPATHS>
+    </XCODE_MAC>
+    <VS2022 targetFolder="Builds/VisualStudio2022">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="Synth" cppLanguageStandard="17" cppLibType="0" optimisation="0" targetFolder="Builds/VisualStudio2022/build/Debug" headerPath="" preprocessorDefs="DEBUG=1 _DEBUG=1 JUCE_DEBUG=1 JUCE_DISPLAY_SPLASH_SCREEN=1 JUCE_USE_DARK_SPLASH_SCREEN=0 JUCE_PROJUCER_VERSION=0x70005" warningLevel="4" useRuntimeLib="0" runtimeLibrary="2" useXP="0" characterSet="1" toolset="0" />
+        <CONFIGURATION isDebug="0" name="Release" targetName="Synth" cppLanguageStandard="17" cppLibType="0" optimisation="3" targetFolder="Builds/VisualStudio2022/build/Release" headerPath="" preprocessorDefs="NDEBUG=1 JUCE_DISPLAY_SPLASH_SCREEN=1 JUCE_USE_DARK_SPLASH_SCREEN=0 JUCE_PROJUCER_VERSION=0x70005" warningLevel="3" useRuntimeLib="0" runtimeLibrary="3" useXP="0" characterSet="1" toolset="0" />
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="JUCE/modules" />
+        <MODULEPATH id="juce_audio_devices" path="JUCE/modules" />
+        <MODULEPATH id="juce_audio_formats" path="JUCE/modules" />
+        <MODULEPATH id="juce_audio_processors" path="JUCE/modules" />
+        <MODULEPATH id="juce_audio_utils" path="JUCE/modules" />
+        <MODULEPATH id="juce_core" path="JUCE/modules" />
+        <MODULEPATH id="juce_data_structures" path="JUCE/modules" />
+        <MODULEPATH id="juce_dsp" path="JUCE/modules" />
+        <MODULEPATH id="juce_events" path="JUCE/modules" />
+        <MODULEPATH id="juce_graphics" path="JUCE/modules" />
+        <MODULEPATH id="juce_gui_basics" path="JUCE/modules" />
+        <MODULEPATH id="juce_gui_extra" path="JUCE/modules" />
+      </MODULEPATHS>
+    </VS2022>
+    <LINUX_MAKE targetFolder="Builds/LinuxMakefile">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="Synth" cppLanguageStandard="17" cppLibType="0" optimisation="0" targetFolder="Builds/LinuxMakefile/build/Debug" headerPath="" preprocessorDefs="DEBUG=1 JUCE_DEBUG=1 JUCE_DISPLAY_SPLASH_SCREEN=1 JUCE_USE_DARK_SPLASH_SCREEN=0 JUCE_PROJUCER_VERSION=0x70005" pkgConfigLibraries="" />
+        <CONFIGURATION isDebug="0" name="Release" targetName="Synth" cppLanguageStandard="17" cppLibType="0" optimisation="3" targetFolder="Builds/LinuxMakefile/build/Release" headerPath="" preprocessorDefs="NDEBUG=1 JUCE_DISPLAY_SPLASH_SCREEN=1 JUCE_USE_DARK_SPLASH_SCREEN=0 JUCE_PROJUCER_VERSION=0x70005" pkgConfigLibraries="" />
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="JUCE/modules" />
+        <MODULEPATH id="juce_audio_devices" path="JUCE/modules" />
+        <MODULEPATH id="juce_audio_formats" path="JUCE/modules" />
+        <MODULEPATH id="juce_audio_processors" path="JUCE/modules" />
+        <MODULEPATH id="juce_audio_utils" path="JUCE/modules" />
+        <MODULEPATH id="juce_core" path="JUCE/modules" />
+        <MODULEPATH id="juce_data_structures" path="JUCE/modules" />
+        <MODULEPATH id="juce_dsp" path="JUCE/modules" />
+        <MODULEPATH id="juce_events" path="JUCE/modules" />
+        <MODULEPATH id="juce_graphics" path="JUCE/modules" />
+        <MODULEPATH id="juce_gui_basics" path="JUCE/modules" />
+        <MODULEPATH id="juce_gui_extra" path="JUCE/modules" />
+      </MODULEPATHS>
+    </LINUX_MAKE>
+  </EXPORTFORMATS>
+  <MODULEPATHS>
+    <MODULEPATH id="juce_audio_basics" path="JUCE/modules" />
+    <MODULEPATH id="juce_audio_devices" path="JUCE/modules" />
+    <MODULEPATH id="juce_audio_formats" path="JUCE/modules" />
+    <MODULEPATH id="juce_audio_processors" path="JUCE/modules" />
+    <MODULEPATH id="juce_audio_utils" path="JUCE/modules" />
+    <MODULEPATH id="juce_core" path="JUCE/modules" />
+    <MODULEPATH id="juce_data_structures" path="JUCE/modules" />
+    <MODULEPATH id="juce_dsp" path="JUCE/modules" />
+    <MODULEPATH id="juce_events" path="JUCE/modules" />
+    <MODULEPATH id="juce_graphics" path="JUCE/modules" />
+    <MODULEPATH id="juce_gui_basics" path="JUCE/modules" />
+    <MODULEPATH id="juce_gui_extra" path="JUCE/modules" />
+  </MODULEPATHS>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0" />
+</JUCERPROJECT>

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Components Showcase - Blackway FX Kit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: url('Assets/background_01.png') center/cover no-repeat,
+                        linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background-attachment: fixed;
+            color: #fff;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+
+        .section {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .component-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .component-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            border-color: rgba(0, 212, 255, 0.5);
+        }
+
+        .component-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+        }
+
+        .component-name {
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.9);
+            word-break: break-word;
+            font-weight: 500;
+        }
+
+        .filmstrip-container {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+
+        .filmstrip-preview {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            margin-right: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .filmstrip-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .filmstrip-info {
+            display: inline-block;
+            vertical-align: top;
+            padding: 10px;
+        }
+
+        .filmstrip-name {
+            font-size: 1.2em;
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+
+        .filmstrip-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9em;
+        }
+
+        .button-demo {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .button-demo img {
+            display: block;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+
+        .button-demo:hover img {
+            transform: scale(1.1);
+        }
+
+        .button-label {
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: rgba(0, 212, 255, 0.2);
+            transform: translateX(-5px);
+        }
+
+        .knob-preview {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 15px;
+            position: relative;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .knob-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="ui.html" class="back-link">← Back to Synth</a>
+        
+        <h1>🎨 UI Components Showcase</h1>
+        <p class="subtitle">Blackway FX Kit - All Available Components</p>
+
+        <!-- Backgrounds -->
+        <div class="section">
+            <h2 class="section-title">Backgrounds</h2>
+            <div class="component-grid">
+                <div class="component-item">
+                    <img src="Assets/background_01.png" alt="Background 01" class="component-image">
+                    <div class="component-name">background_01.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/background_02.png" alt="Background 02" class="component-image">
+                    <div class="component-name">background_02.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/background_03.png" alt="Background 03" class="component-image">
+                    <div class="component-name">background_03.png</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="section">
+            <h2 class="section-title">Buttons</h2>
+            <div class="component-grid">
+                <div class="button-demo">
+                    <img src="Assets/button_quare_big_off.png" alt="Button Big Off">
+                    <div class="button-label">Big Square Off</div>
+                </div>
+                <div class="button-demo">
+                    <img src="Assets/button_quare_big_on.png" alt="Button Big On">
+                    <div class="button-label">Big Square On</div>
+                </div>
+                <div class="button-demo">
+                    <img src="Assets/button_rectangular_big_off.png" alt="Button Rect Big Off">
+                    <div class="button-label">Big Rect Off</div>
+                </div>
+                <div class="button-demo">
+                    <img src="Assets/button_rectangular_big_on.png" alt="Button Rect Big On">
+                    <div class="button-label">Big Rect On</div>
+                </div>
+                <div class="button-demo">
+                    <img src="Assets/button_rectangular_small_off.png" alt="Button Rect Small Off">
+                    <div class="button-label">Small Rect Off</div>
+                </div>
+                <div class="button-demo">
+                    <img src="Assets/button_rectangular_small_on.png" alt="Button Rect Small On">
+                    <div class="button-label">Small Rect On</div>
+                </div>
+                <div class="button-demo">
+                    <img src="Assets/button_square_small_off.png" alt="Button Square Small Off">
+                    <div class="button-label">Small Square Off</div>
+                </div>
+                <div class="button-demo">
+                    <img src="Assets/button_square_small_on.png" alt="Button Square Small On">
+                    <div class="button-label">Small Square On</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEDs -->
+        <div class="section">
+            <h2 class="section-title">LEDs</h2>
+            <div class="component-grid">
+                <div class="component-item">
+                    <img src="Assets/led_off.png" alt="LED Off" class="component-image">
+                    <div class="component-name">led_off.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/led_on.png" alt="LED On" class="component-image">
+                    <div class="component-name">led_on.png</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Switches -->
+        <div class="section">
+            <h2 class="section-title">Switches</h2>
+            <div class="component-grid">
+                <div class="button-demo">
+                    <img src="Assets/switch_horizontal_off.png" alt="Switch Horizontal Off">
+                    <div class="button-label">Horizontal Off</div>
+                </div>
+                <div class="button-demo">
+                    <img src="Assets/switch_horizontal_on.png" alt="Switch Horizontal On">
+                    <div class="button-label">Horizontal On</div>
+                </div>
+                <div class="button-demo">
+                    <img src="Assets/switch_vertical_off.png" alt="Switch Vertical Off">
+                    <div class="button-label">Vertical Off</div>
+                </div>
+                <div class="button-demo">
+                    <img src="Assets/switch_vertical_on.png" alt="Switch Vertical On">
+                    <div class="button-label">Vertical On</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pads -->
+        <div class="section">
+            <h2 class="section-title">Pads</h2>
+            <div class="component-grid">
+                <div class="component-item">
+                    <img src="Assets/pad_off.png" alt="Pad Off" class="component-image">
+                    <div class="component-name">pad_off.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/pad_on.png" alt="Pad On" class="component-image">
+                    <div class="component-name">pad_on.png</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screens -->
+        <div class="section">
+            <h2 class="section-title">Screens</h2>
+            <div class="component-grid">
+                <div class="component-item">
+                    <img src="Assets/screen_big.png" alt="Screen Big" class="component-image">
+                    <div class="component-name">screen_big.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/screen_small.png" alt="Screen Small" class="component-image">
+                    <div class="component-name">screen_small.png</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meters -->
+        <div class="section">
+            <h2 class="section-title">Meters</h2>
+            <div class="component-grid">
+                <div class="component-item">
+                    <img src="Assets/meter_vu.png" alt="VU Meter" class="component-image">
+                    <div class="component-name">meter_vu.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/arrow_vu.png" alt="VU Arrow" class="component-image">
+                    <div class="component-name">arrow_vu.png</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Knob Filmstrips (128 frames) -->
+        <div class="section">
+            <h2 class="section-title">Knob Filmstrips (128 Frames)</h2>
+            
+            <div class="filmstrip-container">
+                <div class="filmstrip-preview">
+                    <img src="Assets/PNG Filmstripes 128 frames/knob_small_solid_black_128_frames.png" alt="Knob Small Solid Black">
+                </div>
+                <div class="filmstrip-info">
+                    <div class="filmstrip-name">knob_small_solid_black_128_frames.png</div>
+                    <div class="filmstrip-description">Small solid black knob with 128 animation frames</div>
+                </div>
+            </div>
+
+            <div class="filmstrip-container">
+                <div class="filmstrip-preview">
+                    <img src="Assets/PNG Filmstripes 128 frames/knob_big_white_128_frames.png" alt="Knob Big White">
+                </div>
+                <div class="filmstrip-info">
+                    <div class="filmstrip-name">knob_big_white_128_frames.png</div>
+                    <div class="filmstrip-description">Big white knob with 128 animation frames</div>
+                </div>
+            </div>
+
+            <div class="filmstrip-container">
+                <div class="filmstrip-preview">
+                    <img src="Assets/PNG Filmstripes 128 frames/knob_small_black_128_frames.png" alt="Knob Small Black">
+                </div>
+                <div class="filmstrip-info">
+                    <div class="filmstrip-name">knob_small_black_128_frames.png</div>
+                    <div class="filmstrip-description">Small black knob with 128 animation frames</div>
+                </div>
+            </div>
+
+            <div class="filmstrip-container">
+                <div class="filmstrip-preview">
+                    <img src="Assets/PNG Filmstripes 128 frames/knob_medium_black_128_frames.png" alt="Knob Medium Black">
+                </div>
+                <div class="filmstrip-info">
+                    <div class="filmstrip-name">knob_medium_black_128_frames.png</div>
+                    <div class="filmstrip-description">Medium black knob with 128 animation frames</div>
+                </div>
+            </div>
+
+            <div class="filmstrip-container">
+                <div class="filmstrip-preview">
+                    <img src="Assets/PNG Filmstripes 128 frames/knob_big_black_128_frames.png" alt="Knob Big Black">
+                </div>
+                <div class="filmstrip-info">
+                    <div class="filmstrip-name">knob_big_black_128_frames.png</div>
+                    <div class="filmstrip-description">Big black knob with 128 animation frames</div>
+                </div>
+            </div>
+
+            <div class="filmstrip-container">
+                <div class="filmstrip-preview">
+                    <img src="Assets/PNG Filmstripes 128 frames/knob_small_scale_linear_128_frames.png" alt="Knob Small Scale Linear">
+                </div>
+                <div class="filmstrip-info">
+                    <div class="filmstrip-name">knob_small_scale_linear_128_frames.png</div>
+                    <div class="filmstrip-description">Small knob with linear scale (128 frames)</div>
+                </div>
+            </div>
+
+            <div class="filmstrip-container">
+                <div class="filmstrip-preview">
+                    <img src="Assets/PNG Filmstripes 128 frames/knob_small_scale_bipolar_128_frames.png" alt="Knob Small Scale Bipolar">
+                </div>
+                <div class="filmstrip-info">
+                    <div class="filmstrip-name">knob_small_scale_bipolar_128_frames.png</div>
+                    <div class="filmstrip-description">Small knob with bipolar scale (128 frames)</div>
+                </div>
+            </div>
+
+            <div class="filmstrip-container">
+                <div class="filmstrip-preview">
+                    <img src="Assets/PNG Filmstripes 128 frames/knob_medium_scale_linear_128_frames.png" alt="Knob Medium Scale Linear">
+                </div>
+                <div class="filmstrip-info">
+                    <div class="filmstrip-name">knob_medium_scale_linear_128_frames.png</div>
+                    <div class="filmstrip-description">Medium knob with linear scale (128 frames)</div>
+                </div>
+            </div>
+
+            <div class="filmstrip-container">
+                <div class="filmstrip-preview">
+                    <img src="Assets/PNG Filmstripes 128 frames/knob_medium_scale_bipolar_128_frames.png" alt="Knob Medium Scale Bipolar">
+                </div>
+                <div class="filmstrip-info">
+                    <div class="filmstrip-name">knob_medium_scale_bipolar_128_frames.png</div>
+                    <div class="filmstrip-description">Medium knob with bipolar scale (128 frames)</div>
+                </div>
+            </div>
+
+            <div class="filmstrip-container">
+                <div class="filmstrip-preview">
+                    <img src="Assets/PNG Filmstripes 128 frames/knob_big_scale_linear_128_frames.png" alt="Knob Big Scale Linear">
+                </div>
+                <div class="filmstrip-info">
+                    <div class="filmstrip-name">knob_big_scale_linear_128_frames.png</div>
+                    <div class="filmstrip-description">Big knob with linear scale (128 frames)</div>
+                </div>
+            </div>
+
+            <div class="filmstrip-container">
+                <div class="filmstrip-preview">
+                    <img src="Assets/PNG Filmstripes 128 frames/knob_big_scale_bipolar_128_frames.png" alt="Knob Big Scale Bipolar">
+                </div>
+                <div class="filmstrip-info">
+                    <div class="filmstrip-name">knob_big_scale_bipolar_128_frames.png</div>
+                    <div class="filmstrip-description">Big knob with bipolar scale (128 frames)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Filmstrips -->
+        <div class="section">
+            <h2 class="section-title">Slider Filmstrips (128 Frames)</h2>
+            
+            <div class="filmstrip-container">
+                <div class="filmstrip-preview">
+                    <img src="Assets/PNG Filmstripes 128 frames/slider_horizontal_128_frames.png" alt="Slider Horizontal">
+                </div>
+                <div class="filmstrip-info">
+                    <div class="filmstrip-name">slider_horizontal_128_frames.png</div>
+                    <div class="filmstrip-description">Horizontal slider with 128 animation frames</div>
+                </div>
+            </div>
+
+            <div class="filmstrip-container">
+                <div class="filmstrip-preview">
+                    <img src="Assets/PNG Filmstripes 128 frames/slider_vertical_128_frames.png" alt="Slider Vertical">
+                </div>
+                <div class="filmstrip-info">
+                    <div class="filmstrip-name">slider_vertical_128_frames.png</div>
+                    <div class="filmstrip-description">Vertical slider with 128 animation frames</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meter Filmstrips -->
+        <div class="section">
+            <h2 class="section-title">Meter Filmstrips</h2>
+            
+            <div class="filmstrip-container">
+                <div class="filmstrip-preview">
+                    <img src="Assets/PNG Filmstripes 128 frames/meter_vu_128_frames.png" alt="VU Meter Filmstrip">
+                </div>
+                <div class="filmstrip-info">
+                    <div class="filmstrip-name">meter_vu_128_frames.png</div>
+                    <div class="filmstrip-description">VU meter with 128 animation frames</div>
+                </div>
+            </div>
+
+            <div class="filmstrip-container">
+                <div class="filmstrip-preview">
+                    <img src="Assets/PNG Filmstripes 128 frames/meter_vu_128_frames_alpha.png" alt="VU Meter Alpha">
+                </div>
+                <div class="filmstrip-info">
+                    <div class="filmstrip-name">meter_vu_128_frames_alpha.png</div>
+                    <div class="filmstrip-description">VU meter with alpha channel (128 frames)</div>
+                </div>
+            </div>
+
+            <div class="filmstrip-container">
+                <div class="filmstrip-preview">
+                    <img src="Assets/PNG Filmstripes 128 frames/meter_led_42_frames.png" alt="LED Meter">
+                </div>
+                <div class="filmstrip-info">
+                    <div class="filmstrip-name">meter_led_42_frames.png</div>
+                    <div class="filmstrip-description">LED meter with 42 animation frames</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Other Components -->
+        <div class="section">
+            <h2 class="section-title">Other Components</h2>
+            <div class="component-grid">
+                <div class="component-item">
+                    <img src="Assets/grid_01.png" alt="Grid 01" class="component-image">
+                    <div class="component-name">grid_01.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/grid_02.png" alt="Grid 02" class="component-image">
+                    <div class="component-name">grid_02.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/screw_01.png" alt="Screw 01" class="component-image">
+                    <div class="component-name">screw_01.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/screw_02.png" alt="Screw 02" class="component-image">
+                    <div class="component-name">screw_02.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/screw_03.png" alt="Screw 03" class="component-image">
+                    <div class="component-name">screw_03.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/screw_04.png" alt="Screw 04" class="component-image">
+                    <div class="component-name">screw_04.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/scroll_head.png" alt="Scroll Head" class="component-image">
+                    <div class="component-name">scroll_head.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/scroll_slot.png" alt="Scroll Slot" class="component-image">
+                    <div class="component-name">scroll_slot.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/arrow_down_off.png" alt="Arrow Down Off" class="component-image">
+                    <div class="component-name">arrow_down_off.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/arrow_down_on.png" alt="Arrow Down On" class="component-image">
+                    <div class="component-name">arrow_down_on.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/arrow_left_off.png" alt="Arrow Left Off" class="component-image">
+                    <div class="component-name">arrow_left_off.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/arrow_left_on.png" alt="Arrow Left On" class="component-image">
+                    <div class="component-name">arrow_left_on.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/arrow_right_off.png" alt="Arrow Right Off" class="component-image">
+                    <div class="component-name">arrow_right_off.png</div>
+                </div>
+                <div class="component-item">
+                    <img src="Assets/arrow_right_on.png" alt="Arrow Right On" class="component-image">
+                    <div class="component-name">arrow_right_on.png</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wheel -->
+        <div class="section">
+            <h2 class="section-title">Wheel</h2>
+            <div class="filmstrip-container">
+                <div class="filmstrip-preview">
+                    <img src="Assets/PNG Filmstripes 128 frames/wheel_128_frames.png" alt="Wheel">
+                </div>
+                <div class="filmstrip-info">
+                    <div class="filmstrip-name">wheel_128_frames.png</div>
+                    <div class="filmstrip-description">Wheel control with 128 animation frames</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
